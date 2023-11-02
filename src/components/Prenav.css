@@ -253,7 +253,10 @@ height: 100%;
   /* Add animation properties */
   transition: transform 0.1s ease-in-out; /* Adjust the animation duration and timing function as needed */
 }
-
+.cart{
+  color: white;
+  text-decoration: none;
+}
 
 
 

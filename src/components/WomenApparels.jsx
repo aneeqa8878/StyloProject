@@ -26,6 +26,7 @@ function WomenApparels() {
                   to={`/womenapparels/${item.id}`}
                 >
                   <span>Quick Shop</span>
+              
                 </Link>
               </div>
 

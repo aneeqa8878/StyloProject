@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+
+import { useSelector,useDispatch } from 'react-redux'
+import { Link, useParams } from "react-router-dom";
 import { kids } from "./kidsData";
 import { toast} from 'react-toastify';
 
-function ProductDetailsKids() {
+
+function ProductDetailsKids(props) {
   const [count, setCount]=useState(0);
     
   const add=()=>{
@@ -20,6 +23,9 @@ function ProductDetailsKids() {
  //setDress(dress+1)
  
   }
+  const handleAddToCart = () => {
+    props.addToCart(product);
+  };
 
   const subtract=()=>{
       if(count<=10)
@@ -71,7 +77,8 @@ function ProductDetailsKids() {
       <h1 className="mx-1 my-3">{count}</h1>
       <button className='btn btn-primary mx-3 my-3' onClick={subtract}>-</button>
       <button type="button" class="button">
-              <b> + Add to Cart </b>
+      <Link class="cart"  onClick={handleAddToCart} to="/cart" ><b> + Add to Cart </b></Link>
+              
             </button>
     </div>
             <br />

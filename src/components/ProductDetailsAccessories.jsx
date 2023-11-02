@@ -2,10 +2,14 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { accessories } from "./AccessoriesData";
 import { toast } from "react-toastify";
+import { connect } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux'
+import { addToCart } from "../redux/actions/cartActions";
 
 
 
 function ProductDetailsAccessories() {
+  const dispatch=useDispatch()
   const [count, setCount] = useState(0);
 
   const add = () => {
@@ -17,6 +21,9 @@ function ProductDetailsAccessories() {
       setCount(count + 1);
     }
     //setDress(dress+1)
+  };
+  const cart = () => {
+    dispatch(addToCart(product));
   };
 
   const subtract = () => {
@@ -34,8 +41,9 @@ function ProductDetailsAccessories() {
   const params = useParams();
   useEffect(() => {
     const data = accessories.filter((selected) => selected.id == params.id);
-    setProduct(data[0]);
-  }, []);
+   // setProduct(data[0]);
+   dispatch(fetchSingleData(id))
+  }, [dispatch]);
   return (
     <div>
       <div className="container mt-2">
@@ -68,7 +76,7 @@ function ProductDetailsAccessories() {
               <button className="btn btn-primary mx-3 my-3" onClick={subtract}>
                 -
               </button>
-              <button type="button" class="button">
+              <button type="button" class="button" onClick={()=>cart()}>
                 <b> + Add to Cart </b>
               </button>
             </div>
@@ -86,4 +94,4 @@ function ProductDetailsAccessories() {
   );
 }
 
-export default ProductDetailsAccessories;
+export default connect(null, { addToCart })(ProductDetailsAccessories);

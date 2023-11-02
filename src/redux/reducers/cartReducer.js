@@ -1,28 +1,32 @@
+// cartReducer.js
+import{FETCH_PRODUCT_FAILED,FETCH_PRODUCT_LOADING,FETCH_PRODUCT_SUCCESS} from "../types/type"
+// Initial state
 const initialState = {
-    cartItems: [],
-  };
-  
-  const cartReducer = (state = initialState, action) => {
-    switch (action.type) {
-      case 'ADD_TO_CART':
-        // Check if the item is already in the cart and update the quantity
-        const updatedCartItems = [...state.cartItems];
-        const existingItem = updatedCartItems.find((item) => item.id === action.payload.id);
-  
-        if (existingItem) {
-          existingItem.quantity += 1;
-        } else {
-          updatedCartItems.push({ ...action.payload, quantity: 1 });
-        }
-  
-        return { ...state, cartItems: updatedCartItems };
-  
-      // Handle other cart-related actions (e.g., REMOVE_FROM_CART, UPDATE_QUANTITY) here
-  
-      default:
-        return state;
-    }
-  };
-  
-  export default cartReducer;
-  
+  count:0,
+  data:null,
+  loading:false,
+  error:false
+};
+
+
+// Reducer
+const cartReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'ADD_TO_CART':
+      return {
+        ...state,
+        cartItems: [...state.cartItems, action.payload],
+      };
+    // Add more cases for other actions like removing items from the cart
+    case FETCH_PRODUCT_LOADING:
+  return{...state,data:null,loading:true,error:false}
+  case FETCH_PRODUCT_SUCCESS:
+    return{...state,data:action.payload,loading:false,error:false}
+    case FETCH_PRODUCT_FAILED:
+      return{...state,data:null,loading:false,error:true}
+    default:
+      return state;
+  }
+};
+
+export default cartReducer;

@@ -33,12 +33,17 @@ import Signup from "./components/Signup";
 import ProductForm from "./components/ProductForm";
 import UpdateUser from "./components/UpdateUser";
 import "./App.css";
+import Cart from "./components/Cart";
+import { useSelector,useDispatch } from "react-redux";
+
 
 
 
 
 
 function App() {
+  const count =useSelector((state)=>state.count)
+  const dispatch =useDispatch()
  // const [token, setToken] = useState();
   //if(!token) {
     //return <Login setToken={setToken} />
@@ -102,6 +107,8 @@ function App() {
         <Route path="/beauty/:id" element={<ProductDetailsBeauty />}></Route>
         <Route path="/contactus" element={<ContactUs />}></Route>
         <Route path="/modal/productdetails" element={<Modal />}></Route>
+        <Route path="/cart" element={<Cart/>}></Route>
+        
       </Routes>
 
       {currentPath !== "/admin" ? <Footer /> : null}
