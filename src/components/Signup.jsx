@@ -19,16 +19,19 @@ const navigate=useNavigate();
     if(password !== confirmpassword){
       toast.warning("Password Does not match!!")
     }
-    setData({
-      fname: "",
-      lname: "",
-      email: "",
-      phone: "",
-      password: "",
-      confirmpassword:""
-    });
-    toast.success("User registered Successfuly")
-    navigate("/login")
+    else{
+      setData({
+        fname: "",
+        lname: "",
+        email: "",
+        phone: "",
+        password: "",
+        confirmpassword:""
+      });
+      toast.success("User registered Successfuly")
+      navigate("/login")
+    }
+    
   };
   const handleChange = (e) => {
     setData((prevData) => ({

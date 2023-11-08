@@ -34,7 +34,7 @@ import ProductForm from "./components/ProductForm";
 import UpdateUser from "./components/UpdateUser";
 import "./App.css";
 import Cart from "./components/Cart";
-import { useSelector,useDispatch } from "react-redux";
+// import { useSelector,useDispatch } from "react-redux";
 
 
 
@@ -42,8 +42,8 @@ import { useSelector,useDispatch } from "react-redux";
 
 
 function App() {
-  const count =useSelector((state)=>state.count)
-  const dispatch =useDispatch()
+  // const count =useSelector((state)=>state.count)
+  // const dispatch =useDispatch()
  // const [token, setToken] = useState();
   //if(!token) {
     //return <Login setToken={setToken} />
