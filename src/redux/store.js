@@ -1,12 +1,12 @@
 // // store.js
 
-// import {  combineReducers } from 'redux';
-// import cartReducer from './reducers/cartReducer';
+ import {  combineReducers } from 'redux';
+ import cartReducer from './reducers/cartReducer';
 
-// const rootReducer = combineReducers({
-//   cart: cartReducer,
-// });
+ const rootReducer = combineReducers({
+   cart: cartReducer,
+ });
 
 
 
-// export default store;
+ export default store;

@@ -42,8 +42,8 @@ import Cart from "./components/Cart";
 
 
 function App() {
-  // const count =useSelector((state)=>state.count)
-  // const dispatch =useDispatch()
+   //const count =useSelector((state)=>state.count)
+   //const dispatch =useDispatch()
  // const [token, setToken] = useState();
   //if(!token) {
     //return <Login setToken={setToken} />
