@@ -55,7 +55,3 @@ exports.update = async (req, res) => {
     console.log(err);
   }
 };
-
-    
-   
-   

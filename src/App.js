@@ -20,6 +20,7 @@ import ProductDetailsBags from "./ProductDetailsBags";
 import ProductDetailsKids from "./components/ProductDetailsKids";
 import ProductDetailsAccessories from "./components/ProductDetailsAccessories";
 import ProductDetailsBeauty from "./components/ProductDetailsBeauty";
+import ProductDetailsSale from "./components/ProductDetailsSale";
 import ContactUs from "./components/ContactUs";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -34,22 +35,18 @@ import ProductForm from "./components/ProductForm";
 import UpdateUser from "./components/UpdateUser";
 import "./App.css";
 import Cart from "./components/Cart";
+
 // import { useSelector,useDispatch } from "react-redux";
 
-
-
-
-
-
 function App() {
-   //const count =useSelector((state)=>state.count)
-   //const dispatch =useDispatch()
- // const [token, setToken] = useState();
+  //const count =useSelector((state)=>state.count)
+  //const dispatch =useDispatch()
+  // const [token, setToken] = useState();
   //if(!token) {
-    //return <Login setToken={setToken} />
+   //return <Login setToken={setToken} />
   //}
   const currentPath = window.location.pathname;
-  
+
   return (
     <>
       {currentPath !== "/admin" ? (
@@ -100,6 +97,7 @@ function App() {
         ></Route>
         <Route path="/bags/:id" element={<ProductDetailsBags />}></Route>
         <Route path="/kids/:id" element={<ProductDetailsKids />}></Route>
+        <Route path="/sale/:id" element={<ProductDetailsSale />}></Route>
         <Route
           path="/accessories/:id"
           element={<ProductDetailsAccessories />}
@@ -107,8 +105,7 @@ function App() {
         <Route path="/beauty/:id" element={<ProductDetailsBeauty />}></Route>
         <Route path="/contactus" element={<ContactUs />}></Route>
         <Route path="/modal/productdetails" element={<Modal />}></Route>
-        <Route path="/cart" element={<Cart/>}></Route>
-        
+        <Route path="/cart" element={<Cart />}></Route>
       </Routes>
 
       {currentPath !== "/admin" ? <Footer /> : null}

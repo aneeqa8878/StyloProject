@@ -122,7 +122,7 @@ function Footer() {
           <h6 style={{ color: "white" }}>
             {" "}
             © 2023 Copyright Stylo:
-            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">
+            <a class="text-reset fw-bold" href="/">
               All Right Reserved
             </a>
           </h6>

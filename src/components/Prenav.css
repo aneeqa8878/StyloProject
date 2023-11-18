@@ -2,9 +2,7 @@
 
 *{
     padding: 0;
-    margin: 0;
-  
-    
+    margin: 0;    
 }
 .prenav{
   background: linear-gradient(to left, #ee7724, #d8363a, #dd3675, #b44593);
@@ -19,7 +17,6 @@
     color: black;
     
 }
-
 body {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -28,14 +25,12 @@ body {
   padding: 0;
 }
 .card{
-  border: none;
-  
+  border: none; 
 }
 .container {
   position: relative;
   font-family: Arial;
 }
-
 .text-block {
   position: absolute;
   bottom:260px;
@@ -50,21 +45,18 @@ body {
 .text-block1 {
   position: absolute;
   bottom:349px;
-  left: 198px;
-  
+  left: 198px; 
   background-color: rgb(252, 80, 80);
   color: white;
   justify-content: center;
   text-align: center;
-
   padding-left: 10px;
   padding-right: 10px;
 }
 .text-block2 {
   position: absolute;
   bottom:339px;
-  left: 199px;
-  
+  left: 199px;  
   background-color: rgb(252, 80, 80);
   color: white;
   justify-content: center;
@@ -86,16 +78,13 @@ body {
   transition:opacity 0.15s ease-in;
   opacity:0;
   padding-top:80px;
-  color:#fff;
-  
+  color:#fff; 
 }
 .card:hover .cover {
   opacity:1;
 }
-
 .card .btn  {
-  width: 150px;
-  
+  width: 150px; 
   text-align: center;
   margin: 5px 10px;
   border-radius: 40px;
@@ -124,9 +113,9 @@ span{
   text-align: center;
   margin: 10px 10px;
   border-radius: 30px;
- 
   font-size: 15px;
-  background-color:#970f3c;
+  background: linear-gradient(to left, #ee7724, #d8363a, #dd3675, #b44593);
+  box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
   cursor: pointer;
   position: relative;
   color:white
@@ -137,7 +126,6 @@ span{
   text-align: center;
   margin: 10px 10px;
   border-radius: 30px;
- 
   font-size: 15px;
   background-color:#5645e9;
   cursor: pointer;
@@ -150,7 +138,6 @@ span{
   text-align: center;
   margin: 5px 5px;
   border-radius: 30px;
- 
   font-size: 15px;
   background: linear-gradient(to left, #ee7724, #d8363a, #dd3675, #b44593);
   cursor: pointer;
@@ -167,7 +154,6 @@ input[type=text], select, textarea {
   margin-bottom: 16px;
   resize: vertical;
 }
-
 input[type=submit] {
   background-color: #04AA6D;
   color: white;
@@ -176,11 +162,9 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
 }
-
 input[type=submit]:hover {
   background-color: #45a049;
 }
-
 .form-container {
   justify-content: center;
  
@@ -215,9 +199,7 @@ height: 100%;
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to left, #ee7724, #d8363a, #dd3675, #b44593);
 }
-  
-  
-  .card-registration .select-input.form-control[readonly]:not([disabled]) {
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
   font-size: 1rem;
   line-height: 2.15;
   padding-left: .75em;
@@ -256,6 +238,30 @@ height: 100%;
 .cart{
   color: white;
   text-decoration: none;
+}
+.btn1{
+  width: 60px;
+  padding: 3px;
+  text-align: center;
+  margin: 10px 10px;
+  border-radius: 10px;
+  font-size: 30px;
+  background-image: linear-gradient(to left, #fc6076, #ff9a44, #ef9d43, #e75516); 
+  cursor: pointer;
+  position: relative;
+  color: white;
+}
+.btn2{
+  width: 60px;
+  padding: 3px;
+  text-align: center;
+  margin: 10px 10px;
+  border-radius: 10px;
+  font-size: 30px;
+  background-image: linear-gradient(to left, #eb3941, #f15e64, #e14e53, #e2373f);
+  cursor: pointer;
+  position: relative;
+  color: white;
 }
 
 

@@ -16,6 +16,7 @@ const navigate=useNavigate();
   const onSubmit = async (e) => {
     e.preventDefault();
     const user = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/auth`, data);
+    
     if(password !== confirmpassword){
       toast.warning("Password Does not match!!")
     }

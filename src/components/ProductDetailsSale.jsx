@@ -1,14 +1,9 @@
 import { useState, useEffect } from "react";
-import { shoes } from "./WomenShoesData";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import { saledata } from "./SaleData";
 
-
-
-
-function ProductDetails() {
-  
- 
+function ProductDetailsBags() {
   const [count, setCount] = useState(0);
 
   const add = () => {
@@ -32,28 +27,30 @@ function ProductDetails() {
     }
     //  setDress(dress-1)
   };
-  const [product, setProduct] = useState({});
+  const [saleproduct, setSaleProduct] = useState({});
 
   const params = useParams();
   useEffect(() => {
-    const data = shoes.filter((selected) => selected.id == params.id);
-    setProduct(data[0]);
+    const data = saledata.filter((selected) => selected.id == params.id);
+    setSaleProduct(data[0]);
   }, []);
+
   return (
     <div>
       <div className="container mt-2">
         <div className="row">
           <div className="col-lg-6 text-center">
-            <img src={product.image} height="400px" width="400px" />
+            <img src={saleproduct.image} height="500px" width="500px" />
           </div>
           <div className="col-lg-4">
-            <h2>{product.articleName}</h2>
+          <h2 className="blink1">{saleproduct.title1}</h2>
+            <h2>{saleproduct.title2}</h2>
             <small style={{ color: "darkslategrey" }}>
               Printed Embroidered Light Khaddar | Top Bottoms Dupatta
             </small>
             <p>
-              <del>{product.originalPrice}</del>&nbsp; &nbsp;
-              <ins style={{ color: "red" }}>{product.discountedPrice}</ins>{" "}
+              <del>{saleproduct.price1}</del>&nbsp; &nbsp;
+              <ins style={{ color: "red" }}>{saleproduct.price2}</ins>{" "}
             </p>
 
             <small style={{ color: "darkslategrey" }}>
@@ -64,24 +61,22 @@ function ProductDetails() {
             <br />
             <br />
             <div className="d-flex">
-              <button className="btn btn-danger mx-1 my-3" onClick={add}>
+              <button className="btn1" onClick={add}>
                 +
               </button>
               <h1 className="mx-1 my-3">{count}</h1>
-              <button className="btn btn-primary mx-3 my-3" onClick={subtract}>
+              <button className="btn2" onClick={subtract}>
                 -
               </button>
-  
               <button type="button" class="button">
                 <b> + Add to Cart </b>
               </button>
-             
             </div>
             <br />
 
             <emb style={{ color: "darkslategrey" }}>Details</emb>
             <hr />
-            <emb style={{ color: "darkslategrey" }}>{product.description}</emb>
+            <emb style={{ color: "darkslategrey" }}>{saleproduct.descriptions}</emb>
 
             <br />
           </div>
@@ -91,4 +86,4 @@ function ProductDetails() {
   );
 }
 
-export default ProductDetails;
+export default ProductDetailsBags;

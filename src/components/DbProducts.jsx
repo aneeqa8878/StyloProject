@@ -23,8 +23,7 @@ function DbProducts() {
             <th scope="col">Discount %</th>
             <th scope="col">Original Price</th>
             <th scope="col">Discount Price</th>
-            <th scope="col">Delete</th>
-            <th scope="col">Update</th>
+           
           </tr>
         </thead>
         <tbody>
@@ -36,8 +35,7 @@ function DbProducts() {
               <td>{item.discountedPercen}</td>
               <td>{item.originalPrice}</td>
               <td>{item.discountedPrice}</td>
-              <td>{item.delete}</td>
-              <td>{item.update}</td>
+             
             </tr>
           )
           })}
