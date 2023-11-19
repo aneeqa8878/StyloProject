@@ -1,10 +1,18 @@
-import React, { useState } from "react";
-import { shoes } from "./WomenShoesData";
+import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
 function WomenShoes() {
-  const [data, setData] = useState(shoes);
+  const [data, setData] = useState([]);
+  const fetchData=async()=>{
+    const response=await fetch("http://localhost:8000/product")
+    const data=await response.json()
+    setData(data.products)
+  }
+
+  useEffect(()=>{
+    fetchData();
+  },[])
   return (
     <div>
       <div className="container d-flex flex-wrap  gap-5 mt-5">
